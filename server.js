@@ -21,3 +21,7 @@ app.listen(PORT, () => {
 const path = require("path");
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views/pug"));
+
+app.route("/").get((req, res) => {
+  res.render("index");
+});
