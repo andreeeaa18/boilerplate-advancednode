@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "pug");
 
-app.set("views", path.join(__dirname, "views/pug"));
+app.set("views", "./views/pug");
 
 app.get("/", (req, res) => {
   res.render("index");
