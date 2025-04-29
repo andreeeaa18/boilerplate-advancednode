@@ -16,17 +16,8 @@ app.set("view engine", "pug");
 
 app.set("views", "./views/pug");
 
-app.get("/", (req, res) => {
-  res.render("index", { title: "Hello", message: "Please log in" });
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Listening on port " + PORT);
-});
-
-const session = session.require(express - session);
-const passport = passport.require(passport);
+const session = require("express - session");
+const passport = require("passport");
 
 app.use(
   session({
@@ -39,3 +30,12 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.get("/", (req, res) => {
+  res.render("index", { title: "Hello", message: "Please log in" });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("Listening on port " + PORT);
+});
