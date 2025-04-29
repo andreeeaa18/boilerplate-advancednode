@@ -24,3 +24,18 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Listening on port " + PORT);
 });
+
+const session = session.require(express - session);
+const passport = passport.require(passport);
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
